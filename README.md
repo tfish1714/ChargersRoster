@@ -1,11 +1,11 @@
-# Kingkiller Chronicle Character Roster
+# Kingkiller Chronicle Player Roster
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
 
 ## Setup
-* Open project in browser at: https://character-list.firebaseapp.com/
-* Clone this repo from https://github.com/ericanafziger/angular2-kingkiller-character-list
-* In terminal cd angular2-kingkiller-character-list
+* Open project in browser at: https://player-list.firebaseapp.com/
+* Clone this repo from https://github.com/ericanafziger/angular2-kingkiller-player-list
+* In terminal cd angular2-kingkiller-player-list
 * Run npm install and bower install
 
 ## Adding Firebase Configuration
@@ -24,7 +24,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 * On the left hand menu navigate to Database and then the tab rules
 * Change both read and write rules to the boolean true
 * Navigate to the Data tab and click on the three dropdown dots
-* Choose import JSON and upload the character-list.json file from the project directory to get started using the app
+* Choose import JSON and upload the player-list.json file from the project directory to get started using the app
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

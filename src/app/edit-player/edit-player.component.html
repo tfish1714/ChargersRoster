@@ -1,0 +1,31 @@
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a routerLink=''>Back to Player List</a></li>
+  </ol>
+  <h3>Click on Player to Edit</h3>
+  <div class="form-group">
+    <label>Sort By:</label>
+    <select class="form-control" (change)="onChange($event.target.value)">
+      <option value="allPlayers">All Players</option>
+      <option value="femalePlayers">Female Players</option>
+      <option value="malePlayers">Male Players</option>
+      <option value="midget">Midget</option>
+      <option value="pW">Pee Wee</option>
+      <option value="jRPW">Jr. Pee Wee</option>
+      <option value="mM">Mitey Mite</option>
+      <option value="cadet">Cadet</option>
+    </select>
+  </div>
+  <div class='panel panel-default' *ngFor="let player of players | async | filter:filterCategory" (click)="toEditPlayer(player)">
+    <div class="panel-heading">
+      <h4 class="panel-title">{{player.lastName}}</h4>
+    </div>
+    <div class="panel-body">
+      <p>{{player.birthDate}}</p>
+      <p>{{player.description}}</p>
+      <p>Football or Cheer: {{player.category}}</p>
+      <p>Team: {{player.team}}</p>
+      <p>Gender: {{player.gender}}</p>
+    </div>
+  </div>
+</div>

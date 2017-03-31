@@ -1,38 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import { CharacterService } from '../character.service';
-import { Character } from '../character.model';
+import { PlayerService } from '../player.service';
+import { Player } from '../player.model';
 import { ActivatedRoute, Params, Router  } from '@angular/router';
 
 @Component({
   selector: 'app-edit-detail',
   templateUrl: './edit-detail.component.html',
   styleUrls: ['./edit-detail.component.css'],
-  providers: [ CharacterService ]
+  providers: [ PlayerService ]
 })
 export class EditDetailComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute, private characterService: CharacterService) { }
-  characterId: string;
-  characterToEdit;
+  constructor(private router: Router, private route: ActivatedRoute, private playerService: PlayerService) { }
+  playerId: string;
+  playerToEdit;
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.characterId = urlParameters['id'];
+      this.playerId = urlParameters['id'];
     });
-    this.characterToEdit = this.characterService.getCharacterById(this.characterId);
+    this.playerToEdit = this.playerService.getPlayerById(this.playerId);
   }
   goBack() {
-    this.router.navigate(['edit-character']);
+    this.router.navigate(['edit-player']);
   }
-  saveEdit(name:string, tagLine:string, description:string, category:string, species: string, gender: string, image:string) {
-    var editedCharacter = new Character(description, name, tagLine, category, species, gender, image);
-    this.characterService.editCharacter(editedCharacter, this.characterId);
-    this.router.navigate(['edit-character']);
+  saveEdit(firstName:string,
+           lastName:string,
+           birthDate:string,
+           description:string,
+           category:string,
+           team: string,
+           gender: string,
+           image:string) {
+    var editedPlayer = new Player(description, firstName, lastName, birthDate, category, team, gender, image);
+    this.playerService.editPlayer(editedPlayer, this.playerId);
+    this.router.navigate(['edit-player']);
   }
-  deleteCharacter() {
-    if(confirm("Are you sure you want to delete this character?")) {
-      this.characterService.deleteCharacter(this.characterId);
-      this.router.navigate(['edit-character']);
+  deletePlayer() {
+    if(confirm("Are you sure you want to delete this player?")) {
+      this.playerService.deletePlayer(this.playerId);
+      this.router.navigate(['edit-player']);
     }
   }
 }

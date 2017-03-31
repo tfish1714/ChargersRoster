@@ -1,53 +1,69 @@
 <div class="container">
   <ol class="breadcrumb">
-    <li><a (click)="goBack()">Back to Edit Character List</a></li>
+    <li><a (click)="goBack()">Back to Edit Player List</a></li>
   </ol>
   <div class='panel panel-default'>
     <div class="panel-heading">
-      <h4 class="panel-title">Edit Character</h4>
+      <h4 class="panel-title">Edit Player</h4>
     </div>
     <div class="panel-body">
-      <div class="form-group">
-        <label>Name:</label>
-        <input type="text" class="form-control" #name value="{{(characterToEdit | async)?.name}}">
-      </div>
-      <div class="form-group">
-        <label>Tag Line:</label>
-        <input type="text" class="form-control" #tagLine value="{{(characterToEdit | async)?.tagLine}}">
-      </div>
-      <div class="form-group">
-        <label>Description:</label>
-        <textarea rows="4" type="text" class="form-control" #description value="{{(characterToEdit | async)?.description}}"></textarea>
-      </div>
-      <div class="form-group">
-        <label>Category:</label>
-        <select class="form-control" #category value="{{(characterToEdit | async)?.category}}">
-          <option value="Hero">Hero</option>
-          <option value="Villian">Villian</option>
-          <option value="Neutral">Neutral</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Species:</label>
-        <select class="form-control" #species value="{{(characterToEdit | async)?.species}}">
-          <option value="Human">Human</option>
-          <option value="Fae">Fae</option>
-          <option value="Unknown">Unknown</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Gender:</label>
-        <select class="form-control" #gender value="{{(characterToEdit | async)?.gender}}">
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Image URL:</label>
-        <input type="text" class="form-control" #image value="{{(characterToEdit | async)?.image}}">
-      </div>
-      <button type="button" class="btn btn-warning" (click)="saveEdit(name.value, tagLine.value, description.value, category.value, species.value, gender.value, image.value)">Save</button>
-      <button type="button" class="btn btn-danger" (click)="deleteCharacter()">Delete</button>
+<div class="form-group">
+          <label for="name">First Name:</label>
+          <br>
+          <input class="form-control" type="text" #firstName value="{{(playerToEdit | async)?.firstName}}">
+        </div>
+        <div class="form-group">
+          <label for="name">Last Name:</label>
+          <br>
+          <input class="form-control" type="text" #lastName value="{{(playerToEdit | async)?.lastName}}">
+        </div>
+        <div class="form-group">
+          <label for="tagLine">Birth Date:</label>
+          <br>
+          <input class="form-control" type="date" #birthDate value="{{(playerToEdit | async)?.birthDate}}">
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <br>
+          <textarea rows="4" class="form-control" type="text" #description value="{{(playerToEdit | async)?.description}}"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleSelect1">Category: </label>
+          <select class="form-control" #category value="{{(playerToEdit | async)?.category}}">
+            <option value="Football">Football</option>
+            <option value="Cheer">Cheer</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleSelect1">Team: </label>
+          <select class="form-control" #team value="{{(playerToEdit | async)?.team}}">
+            <option value="Flag">Flag</option>
+            <option value="MM">Mitey Mite</option>
+            <option value="Cadet">Cadet</option>
+            <option value="JRPW">Jr. Pee Wee</option>
+            <option value="PW">Pee Wee</option>
+            <option value="Midget">Midget</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleSelect1">Gender: </label>
+          <select class="form-control" #gender value="{{(playerToEdit | async)?.gender}}">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="image">Image URL:</label>
+          <br>
+          <input class="form-control" type="text" #image value="{{(playerToEdit | async)?.image}}">
+        </div>
+
+      <button type="button" class="btn btn-warning" (click)="saveEdit(firstName.value, lastName.value, birthDate.value, description.value, category.value, team.value, gender.value, image.value)">Save</button>
+      <button type="button" class="btn btn-danger" (click)="deletePlayer()">Delete</button>
     </div>
   </div>
 </div>

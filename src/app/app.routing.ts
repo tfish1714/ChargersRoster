@@ -2,9 +2,9 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { NewCharacterComponent } from './new-character/new-character.component';
-import { EditCharacterComponent } from './edit-character/edit-character.component';
-import { CharacterDetailComponent } from './character-detail/character-detail.component';
+import { NewPlayerComponent } from './new-player/new-player.component';
+import { EditPlayerComponent } from './edit-player/edit-player.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { EditDetailComponent } from './edit-detail/edit-detail.component';
 
 const appRoutes: Routes = [
@@ -17,19 +17,19 @@ const appRoutes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'characters/:id',
-    component: CharacterDetailComponent
+    path: 'players/:id',
+    component: PlayerDetailComponent
   },
   {
-    path: 'new-character',
-    component: NewCharacterComponent
+    path: 'new-player',
+    component: NewPlayerComponent
   },
   {
-    path: 'edit-character',
-    component: EditCharacterComponent
+    path: 'edit-player',
+    component: EditPlayerComponent
   },
   {
-    path: 'edit-character/:id',
+    path: 'edit-player/:id',
     component: EditDetailComponent
   },
 ];

@@ -1,0 +1,71 @@
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a routerLink="">Back to Player List</a></li>
+  </ol>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Add New Player</h3>
+    </div>
+    <div class="panel-body">
+      <form>
+        <div class="form-group">
+          <label for="name">First Name:</label>
+          <br>
+          <input class="form-control" type="text" #firstName>
+        </div>
+        <div class="form-group">
+          <label for="name">Last Name:</label>
+          <br>
+          <input class="form-control" type="text" #lastName>
+        </div>
+        <div class="form-group">
+          <label for="tagLine">Birth Date:</label>
+          <br>
+          <input class="form-control" type="date" #birthDate>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <br>
+          <textarea rows="4" class="form-control" type="text" #description></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleSelect1">Category: </label>
+          <select class="form-control" #category>
+            <option value="Football">Football</option>
+            <option value="Cheer">Cheer</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleSelect1">Team: </label>
+          <select class="form-control" #team>
+            <option value="Flag">Flag</option>
+            <option value="MM">Mitey Mite</option>
+            <option value="Cadet">Cadet</option>
+            <option value="JRPW">Jr. Pee Wee</option>
+            <option value="PW">Pee Wee</option>
+            <option value="Midget">Midget</option>
+
+
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleSelect1">Gender: </label>
+          <select class="form-control" #gender>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="image">Image URL:</label>
+          <br>
+          <input class="form-control" type="text" #image>
+        </div>
+        <button class="btn btn-success" type="button" (click)="submitNewPlayer(description.value, lastName.value, firstName.value, birthDate.value, category.value, team.value, gender.value, image.value); firstName.value=''; lastName.value=''; birthDate.value=''; category.value=''; description.value=''; team.value=''; gender.value=''; image.value=''">Add Player</button>
+      </form>
+    </div>
+  </div>
+</div>

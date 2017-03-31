@@ -9,9 +9,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { CharacterDetailComponent } from './character-detail/character-detail.component';
-import { NewCharacterComponent } from './new-character/new-character.component';
-import { EditCharacterComponent } from './edit-character/edit-character.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { NewPlayerComponent } from './new-player/new-player.component';
+import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { EditDetailComponent } from './edit-detail/edit-detail.component';
 import { FilterPipe } from './filter.pipe';
 
@@ -27,9 +27,9 @@ export const firebaseConfig = {
     AppComponent,
     HomeComponent,
     AboutComponent,
-    CharacterDetailComponent,
-    NewCharacterComponent,
-    EditCharacterComponent,
+    PlayerDetailComponent,
+    NewPlayerComponent,
+    EditPlayerComponent,
     EditDetailComponent,
     FilterPipe
   ],

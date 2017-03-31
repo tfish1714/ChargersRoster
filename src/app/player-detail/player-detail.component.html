@@ -1,0 +1,22 @@
+<div class="container">
+  <ol class="breadcrumb">
+    <li><a routerLink="">Back to Player List</a></li>
+    <!-- <li><a routerLink="">Next Player</a></li>
+    <li><a routerLink="">Previous Player</a></li> -->
+  </ol>
+  <div class='panel panel-default'>
+    <div class="panel-heading">
+      <h4 class="panel-title">{{(playerToDisplay | async)?.firstName}} {{(playerToDisplay | async)?.lastName}} Player Detail</h4>
+    </div>
+    <div class="panel-body">
+      <!--<img class="profilePhoto" src="{{(playerToDisplay | async)?.image}}" alt="{{(playerToDisplay | async)?.firstName}} {{(playerToDisplay | async)?.lastName}} ">-->
+      <div class="text">
+        <p>{{(playerToDisplay | async)?.birthDate}}</p>
+        <p>{{(playerToDisplay | async)?.description}}</p>
+        <p>Football or Cheer: <strong>{{(playerToDisplay | async)?.category}}</strong></p>
+        <p>Team: <strong>{{(playerToDisplay | async)?.team}}</strong></p>
+        <p>Gender: <strong>{{(playerToDisplay | async)?.gender}}</strong></p>
+      </div>
+    </div>
+  </div>
+</div>

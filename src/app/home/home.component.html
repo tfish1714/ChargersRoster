@@ -1,30 +1,33 @@
 <div class="cover">
-  <img class="coverImage" src="assets/img/kingkiller-chronicles.png" alt="the Kingkiller Chronicle">
-  <h3 class="coverText">The Kingkiller Chronicle</h3>
+  <img class="coverImage" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/72/NFL_Chargers_logo.svg/1280px-NFL_Chargers_logo.svg.png" alt="River Plaza Lincroft Chargers">
+  <h3 class="coverText">River Plaza Lincroft Chagers</h3>
 </div>
 <div class="container">
   <div class="form-group">
     <label>Sort By:</label>
     <select class="form-control" (change)="onChange($event.target.value)">
-      <option value="allCharacters">All Characters</option>
-      <option value="femaleCharacters">Female Characters</option>
-      <option value="maleCharacters">Male Characters</option>
-      <option value="humanCharacters">Human Characters</option>
-      <option value="faeCharacters">Fae Characters</option>
+      <option value="allPlayers">All Players</option>
+      <option value="femalePlayers">Female Players</option>
+      <option value="malePlayers">Male Players</option>
+      <option value="midget">Midget</option>
+      <option value="pW">Pee Wee</option>
+      <option value="jRPW">Jr. Pee Wee</option>
+      <option value="mM">Mitey Mite</option>
+      <option value="cadet">Cadet</option>
     </select>
   </div>
   <div class="panel-container">
-    <div class='panel panel-default' *ngFor="let character of characters | async | filter:selectedCategory" (click)="toCharacterDetail(character)">
+    <div class='panel panel-default' *ngFor="let player of players | async | filter:selectedCategory" (click)="toPlayerDetail(player)">
       <div class="panel-heading">
-        <h4 class="panel-title">{{character.name}}</h4>
+        <h4 class="panel-title">{{player.firstName}} {{player.lastName}}</h4>
       </div>
       <div class="panel-body">
-        <img class="profilePhoto" src="{{character.image}}" alt="{{character.name}}">
-        <div class="text">
-          <p>{{character.tagLine}}</p>
-        </div>
+        <!--<img class="profilePhoto" src="{{player.image}}" alt="{{player.firstName}} {{player.lastName}}">-->
+        <!--<div class="text">
+          <p>{{player.birthDate}}</p>
+        </div>-->
         <div class="bodyStatic">
-          <p>Species: <em>{{character.species}}</em> | Status: <em>{{character.category}}</em></p>
+          <p>Team: <em>{{player.team}}</em> | Category: <em>{{player.category}}</em></p>
         </div>
       </div>
     </div>
