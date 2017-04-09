@@ -10,7 +10,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class EditPlayerComponent implements OnInit {
   players;
-  filterCategory: string = "allPlayers";
+  filterCategory: string = 'allPlayers';
   constructor(private playerService: PlayerService, private router: Router) { }
 
   ngOnInit() {

@@ -18,7 +18,7 @@
   </div>
   <div class='panel panel-default' *ngFor="let player of players | async | filter:filterCategory" (click)="toEditPlayer(player)">
     <div class="panel-heading">
-      <h4 class="panel-title">{{player.lastName}}</h4>
+      <h4 class="panel-title">{{player.firstName}} {{player.lastName}}</h4>
     </div>
     <div class="panel-body">
       <p>{{player.birthDate}}</p>

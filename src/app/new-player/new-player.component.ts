@@ -11,19 +11,14 @@ import { Router } from '@angular/router';
   providers: [ PlayerService ]
 })
 export class NewPlayerComponent {
+  public model: Player;
 
-  constructor(private playerService: PlayerService, private router: Router) { }
+  constructor(private playerService: PlayerService, private router: Router) { 
+    this.model = new Player();
+  }
 
-  submitNewPlayer(description: string,
-                     lastName: string,
-                     firstName: string,
-                     birthDate: string,
-                     category: string,
-                     team: string,
-                     gender: string,
-                     image:string) {
-    var newPlayer = new Player(description, firstName, lastName, birthDate, category, team, gender, image);
-    this.playerService.addPlayer(newPlayer);
+  submitNewPlayer() {
+    this.playerService.addPlayer(this.model);
     this.router.navigate(['']);
   }
 }
