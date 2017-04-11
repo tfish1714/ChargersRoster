@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  isIn = false;
+  toggleState(){
+    let bool = this.isIn;
+    this.isIn = bool === false ? true : false;
+  }
 }

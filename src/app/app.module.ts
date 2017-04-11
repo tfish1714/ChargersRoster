@@ -14,6 +14,7 @@ import { NewPlayerComponent } from './new-player/new-player.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { EditDetailComponent } from './edit-detail/edit-detail.component';
 import { FilterPipe } from './filter.pipe';
+import { PlayerFormComponent } from './player-form.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -31,7 +32,8 @@ export const firebaseConfig = {
     NewPlayerComponent,
     EditPlayerComponent,
     EditDetailComponent,
-    FilterPipe
+    FilterPipe,
+    PlayerFormComponent
   ],
   imports: [
     BrowserModule,

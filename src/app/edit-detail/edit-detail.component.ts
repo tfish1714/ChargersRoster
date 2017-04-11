@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService } from '../player.service';
 import { Player } from '../player.model';
+import { PlayerFormComponent } from '../player-form.component';
 import { ActivatedRoute, Params, Router  } from '@angular/router';
 
 @Component({

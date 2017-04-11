@@ -1,20 +1,25 @@
-<nav class="navbar navbar-default">
-   <div class="container-fluid">
-     <div class="navbar-header">
-       <a class="navbar-brand" routerLink="">River Plaza Lincroft Chargers</a>
-     </div>
-     <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
-       <li><a routerLink="">Home</a></li>
-       <li><a routerLink="about">About</a></li>
-       <li><a routerLink="new-player">Add Player</a></li>
-       <li><a routerLink="edit-player">Edit Player</a></li>
-     </ul>
-     <!--PHONE NAV MENU: NEED TO Do THIS-->
-     <ul class="phone-nav hidden-md hidden-lg">
-       <li class="menu"><a href="#"><img src="assets/img/btn-compact-nav.svg"></a></li>
-     </ul>
-   </div><!--end of navbar container-fluid-->
- </nav>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+            (click)="toggleState()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" routerLink="">River Plaza Lincroft Chargers</a>
+        </div>
+        <div class="collapse navbar-collapse"
+        [ngClass]="{ 'in': isIn}">
+          <ul class="nav navbar-nav">
+              <li><a routerLink="about" (click)="toggleState()">About</a></li>
+              <li><a routerLink="new-player" (click)="toggleState()">Add Player</a></li>
+              <li><a routerLink="edit-player" (click)="toggleState()">Edit Player</a></li>
+          </ul>
+        </div>
+    </div>
+</nav>
 <router-outlet></router-outlet>
 <div class="container-fluid">
   <div class="row footer">
